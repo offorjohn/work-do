@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-white
+
+}
+
+/* Add this to your CSS file or within a <style> tag */
+
+img {
+    display: block; /* Remove any default inline spacing */
+    border: none; /* Remove any default border */
+  }
+  
