@@ -33,7 +33,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                         <p>Account</p>
                     </div>
                 </Link>
-                <Link to="/login">
+                <Link to="#">
                     <div
                         className={`pl-2 py-1 mx-2 rounded text-center cursor-pointer mb-3 flex-center transition-colors ${location.pathname === "/account" ? "bg-orange-100 text-orange-500" : "text-black-600 hover:bg-green-400 hover:text-black-500 hover:rounded-lg"
                             }`}
