@@ -1,11 +1,13 @@
 import { Fragment } from "react";
-import { Bars3CenterLeftIcon, BellIcon, CheckIcon, ChevronDownIcon, PencilIcon, CreditCardIcon, Cog6ToothIcon } from '@heroicons/react/24/solid';
+import { Bars3CenterLeftIcon, BellIcon, CheckIcon, ChevronDownIcon, PencilIcon, CreditCardIcon, Cog6ToothIcon, UserIcon } from '@heroicons/react/24/solid';
 import { Menu, Transition } from '@headlessui/react';
 import { Link } from "react-router-dom";
 import React from 'react';
+import { userStateContext } from "../contexts/ContextProvider";
 
 export const TopBar = ({ showNav, setShowNav }) => {
-
+       const { currentUser, userToken } = userStateContext();
+     
     const logout = (ev) => {
         ev.preventDefault();
         console.log("Logout");
@@ -58,7 +60,7 @@ export const TopBar = ({ showNav, setShowNav }) => {
         <Menu as="div" className="relative inline-block text-left">
           <div>
             <Menu.Button className="inline-flex w-full justify-center items-center">
-              <img src="images/logo.png" className="rounded-full h-8 md:mr-4 border-2 border-white shadow-sm" alt="profile" />
+               <UserIcon className="w-8 rounded-full  h-6 bg-green/25 text-green-700 "/>
               <span className="hidden md:block font-medium text-gray-700">John</span>
               <ChevronDownIcon className="ml-2 h-4 w-4 text-gray-700" />
             </Menu.Button>
@@ -74,8 +76,11 @@ export const TopBar = ({ showNav, setShowNav }) => {
           >
             <Menu.Items className="absolute right-0 w-56 z-50 mt-2 origin-top-right bg-white rounded shadow-sm">
               <div className="p-1">
+                {currentUser.name}
+                
+                <UserIcon className="w-8 rounded-full  h-6 bg-green/25 text-green-700"/>
                 <Menu.Item>
-                  {({ active }) => (
+                  {({ active}) => (
                     <Link to="#" className={`flex ${active ? 'bg-green-500 text-white' : 'text-gray-700'} rounded p-2 text-sm group transition-colors items-center`}>
                       <PencilIcon className="h-4 w-4 mr-2" />
                       Edit
@@ -84,7 +89,9 @@ export const TopBar = ({ showNav, setShowNav }) => {
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <Link to="/login"  className={`flex ${active ? 'bg-green-500 text-white'  : 'text-gray-700'} rounded p-2 text-sm group transition-colors items-center`}>
+                    <Link to="#" 
+                        onClick={(ev) => logout(ev)}
+                    className={`flex ${active ? 'bg-green-500 text-white'  : 'text-gray-700'} rounded p-2 text-sm group transition-colors items-center`}>
                       <CreditCardIcon className="h-4 w-4 mr-2" />
 
                     

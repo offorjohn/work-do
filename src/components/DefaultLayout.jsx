@@ -2,6 +2,7 @@ import { useState, useEffect, Fragment } from 'react';
 import { Transition } from '@headlessui/react';
 import SideBar from "./SideBar";
 import TopBar from "./TopBar"
+
 import { Outlet } from 'react-router-dom';
 
 
@@ -39,11 +40,7 @@ export const DefaultLayout = ({ children }) => {
   return (
     
     <>
-
-    
-
-    
-      <TopBar showNav={showNav} setShowNav={setShowNav} />
+ <TopBar showNav={showNav} setShowNav={setShowNav} />
       <Transition
         as={Fragment}
         show={showNav}
@@ -66,8 +63,8 @@ export const DefaultLayout = ({ children }) => {
 
       <main className={`pt-16 transition-all duration-[400ms] ${showNav && !isMobile ? "pl-56" : ""}`}>
         <div className='px-4 md:px-16'>
-        <p className='text-gray-700 text-3xl mb-16 font-bold'>DefaultLayout</p>
-         <div className='rounded bg-white h-40 shadow-sm'></div>
+
+         <div className='rounded bg-black'></div>
           
 
           {children}
