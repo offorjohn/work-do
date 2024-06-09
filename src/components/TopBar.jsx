@@ -89,7 +89,7 @@ export const TopBar = ({ showNav, setShowNav }) => {
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <Link to="#" 
+                    <Link to="login" 
                         onClick={(ev) => logout(ev)}
                     className={`flex ${active ? 'bg-green-500 text-white'  : 'text-gray-700'} rounded p-2 text-sm group transition-colors items-center`}>
                       <CreditCardIcon className="h-4 w-4 mr-2" />
@@ -101,7 +101,7 @@ export const TopBar = ({ showNav, setShowNav }) => {
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <Link to="#" className={`flex ${active ? 'bg-green-500 text-white' : 'text-gray-700'} rounded p-2 text-sm group transition-colors items-center`}>
+                    <Link to="/login" className={`flex ${active ? 'bg-green-500 text-white' : 'text-gray-700'} rounded p-2 text-sm group transition-colors items-center`}>
                       <Cog6ToothIcon className="h-4 w-4 mr-2" />
                       Settings
                     </Link>
