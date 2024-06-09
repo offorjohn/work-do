@@ -1,26 +1,35 @@
+import PageComponent from "../components/PageComponent"
+import SurveyListItem from "../components/SurveyListItem";
+import { useStateContext } from "../contexts/ContextProvider";
+
 export default function Task() {
+
+    const { tasks } = useStateContext();
+    console.log(tasks)
+
+    const onDeleteClick = () => {
+        console.log("On Delete click");
+    }
 
 
     return (
-      <>
-         <div>Project</div>
-         <header className="bg-white shadow">
-          <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-grey-900">
-              Task
-  
-            </h1>
-          </div>
-         </header>
-         <main>
-           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            Task Content
-           </div>
-         </main>
-      
-      </>
-   
+
+       <>
+           <PageComponent title="Task">
+            <div className="grid lg:grid-cols-3 gap-5 mb-16">
+
+                {tasks.map((task) => (
+                    <SurveyListItem task={task} key={task.id} onDeleteClick={onDeleteClick} />
+                ))}
+        
+            </div>
+            </PageComponent>
+        
+
+
+        </>
     )
-  }
-  
-  
+
+
+}
+

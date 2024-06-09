@@ -1,12 +1,17 @@
 import { Fragment } from "react";
 import { Bars3CenterLeftIcon, BellIcon, CheckIcon, ChevronDownIcon, PencilIcon, CreditCardIcon, Cog6ToothIcon, UserIcon } from '@heroicons/react/24/solid';
 import { Menu, Transition } from '@headlessui/react';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import React from 'react';
-import { userStateContext } from "../contexts/ContextProvider";
+import { useStateContext } from "../contexts/ContextProvider";
 
 export const TopBar = ({ showNav, setShowNav }) => {
-       const { currentUser, userToken } = userStateContext();
+       const { currentUser, userToken } = useStateContext();
+
+
+       if (!userToken) {
+        return <Navigate to='login' />
+       }
      
     const logout = (ev) => {
         ev.preventDefault();
