@@ -2,6 +2,7 @@ import { useState, useEffect, Fragment } from 'react';
 import { Transition } from '@headlessui/react';
 import SideBar from "./SideBar";
 import TopBar from "./TopBar"
+import { Outlet } from 'react-router-dom';
 
 
 
@@ -71,6 +72,7 @@ export const DefaultLayout = ({ children }) => {
 
           {children}
         </div>
+        <Outlet/>
         
 
       </main>

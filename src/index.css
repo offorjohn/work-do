@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    @apply bg-white
-
-}
+.h-full{
+    @apply bg-gray-100; /* Ensure the color class exists in Tailwind CSS */
+  }
 
 /* Add this to your CSS file or within a <style> tag */
 
