@@ -7,6 +7,7 @@ import Project from "./views/Project"
 import Task from "./views/Task";
 import { GuestLayout } from "./components/GuestLayout";
 import { DefaultLayout } from "./components/DefaultLayout";
+import SurveyView from "./views/SurveyView";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
          { 
             path: 'projects',
             element: <Project/>
+      
+         },
+         { 
+            path: 'task/create',
+            element: <SurveyView/>
       
          },
          { 
