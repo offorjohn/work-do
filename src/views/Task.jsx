@@ -4,7 +4,7 @@ import axios from 'axios';
 function Task() {
     const [productsData, setProductsData] = useState([]);
 
-    const endpoint = `${import.meta.env.VITE_API_BASE_URL}/products/`;
+    const endpoint = `${import.meta.env.VITE_API_BASE_URL}/posts/`;
 
     const fetchData = async () => {
         console.log('fetching...');
